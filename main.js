@@ -18,3 +18,19 @@ function openMenu() {
 function closeMenu() {
     document.body.classList.remove("menu-expanded")
 }
+
+//eu posso modificar esta libe do jeito que eu quero, eu copiei um código base de  https://scrollrevealjs.org/guide/hello-world.html
+ScrollReveal({
+    origin: 'top',
+    distance:'30px', //aqui nao tem problema em se usar uma unidade fixa
+    duration: '700',
+}).reveal(`
+    #home, 
+    #home img, 
+    #home .stats,
+    #services,
+    #services header,
+    #services .card, 
+    #about,
+    #about header,
+    #about .content`); //aqui eu coloco mais de um argumento indicando a ordem de surgimento dos elementos na página, somente os template literals que é o que bai dentro das crases, te permite quebrar as linhas nas strings, aspas e aspas duplas nao te permitem
