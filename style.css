@@ -14,6 +14,7 @@
 
     --brand-beige: hsl(39, 100%, 97%);
     --brand-light: hsl(148, 23%, 89%);
+    --brand-dark: hsl(170, 100%, 14%);
 
     --bg-light: hsl(180, 14%, 97%); 
 
@@ -93,6 +94,39 @@ section .content p {
     line-height: 150%;
 
     color: var(--paragraph);
+}
+
+.button {
+    background: var(--primary-color);
+
+    border: none;
+    border-radius: 4rem;
+
+    margin-bottom: 6rem;
+
+    padding: 1.6rem 3.2rem;
+    width: fit-content; /* fit-content a largura se adapta ao conteúdo e nao a caixa em si*/
+
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 700;
+
+    display: flex; /* flex - pega um elemento e deixa ele um ao lado do outro */
+    align-items: center;
+    justify-content: center;
+
+    gap: 1.6rem;
+
+
+
+    text-decoration: none;
+
+    transition: backgroun 200ms;
+}
+
+.button:hover {
+    background-color: var(--brand-dark);
 }
 
 /* =========NAVIGATION===================================== */
@@ -251,6 +285,10 @@ body.menu-expanded button path {
     z-index: -1;
 }
 
+#home .button {
+    margin-inline: auto;
+}
+
 #home p {
     font-size: 1.8rem;
     line-height: 150%;
@@ -266,32 +304,6 @@ body.menu-expanded button path {
     object-position: 0 2rem;   /* https://developer.mozilla.org/en-US/docs/Web/CSS/object-position       muda o alinhamento de um elemento dentro de uma caixa*/
 }
 
-#home button {
-    background: var(--primary-color);
-
-    border: none;
-    border-radius: 4rem;
-
-    margin-bottom: 6rem;
-
-    height: 5.2rem;
-    width: 26.3rem;
-
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 1.4rem;
-    font-weight: 700;
-
-    display: flex; /* flex - pega um elemento e deixa ele um ao lado do outro */
-    align-items: center;
-    justify-content: center;
-
-    gap: 1.6rem;
-
-    /* centralizar botao */
-    margin-right: auto;
-    margin-left: auto;
-}
 
 #home .stats {
     width: 32.7rem;
@@ -361,3 +373,30 @@ body.menu-expanded button path {
     margin-top: 2.4rem;
     margin-bottom: 6rem;
 }
+
+/* ========CONTACT=================================== */
+
+#contact {
+    text-align: left;
+}
+
+#contact header {
+    margin-bottom: 3.2rem;
+}
+
+#contact ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    margin-bottom: 3.2rem;
+}
+
+#contact ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem ; /* em evz de usar margin e pading para tudo, só uso um gap, mas preciso ter o display flex ativado*/
+}
+
+
+/* 26min */
