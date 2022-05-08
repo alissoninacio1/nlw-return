@@ -11,7 +11,58 @@ onScroll() //era preciso executar a funcao uma vez, somente para adicionar a cla
 function onScroll() {
     showNavOnScroll()
     showBackToTopButtonOnScroll()
+
+    activateMenuAtCurrentSection(home) //passando os IDs da secao como argumento - no HTML o id é um seletor, no JS ele se converte em um objeto
+    activateMenuAtCurrentSection(services)
+    activateMenuAtCurrentSection(about)
+    activateMenuAtCurrentSection(contact)
 }
+
+
+//criando linhas imaginárias
+function activateMenuAtCurrentSection(section) {
+    const targetLine = scrollY + innerHeight / 2   //lógica para saber as linhas alvo na página
+
+    //verificar se a secao passou da linha
+    //quais dados vou precisar?
+    //offsetTop - O HTMLElement.offsetTop é um método apenas de leitura que retorna a medida, em pixels, da distância do elemento atual em relação ao topo do offsetParent
+
+    //aqui eu pego um elemento, mas na verdade eu estou pegando o elemento pelo o id, somento com o nome, sem o #id
+    const sectionTop = section.offsetTop
+    const sectionHeight = section.offsetHeight
+
+    //o topo da secao chegou ou ultrapassou a linha alvo
+    const sectionTopReachOrPassedTargetLine = targetLine >= sectionTop
+
+
+
+    /* -------------verificar se a base está abaixo da linha alvo---------*/
+
+    //primeiro preciso ver que a linha comeca em uma altura da página, que seria a sua base (topo) e, depois, para saber onde termina a secao no eixo x, 
+    //eu pego a base desta secao, que me marca um valor, somo a sua altura (porque eu posso obter usando o height), 
+    //e tenho onde ela termina. Assim, a gente tem onde a secao termina no eixo x, que é a soma da sua base com a sua altura. 
+    const sectionEndsAt = sectionTop + sectionHeight
+
+    //o final da secao passou da linha alvo
+    const sectionEndPassedTargetLine = sectionEndsAt <= targetLine
+
+    //limites da secao
+    const sectionBoundaries = 
+    sectionTopReachOrPassedTargetLine && !sectionEndPassedTargetLine
+
+    const sectionId = section.getAttribute('id')
+
+    const menuElement = document
+    .querySelector(`.menu a[href*=${sectionId}]`)//olha no menu, todos os elementos a, olhe o atributo href, e veja todos os que tenham/sejam semelhantes a (variável)
+
+    menuElement.classList.remove('active')
+    if (sectionBoundaries) {
+        menuElement.classList.add('active')
+    }
+}
+
+
+
 
 function showNavOnScroll() {
     if(scrollY > 0) {
