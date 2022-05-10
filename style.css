@@ -144,7 +144,7 @@ section .content p {
     fill: var(--brand-light);  /* esta linha é para fazer referencia nas trocas de colores pela variável hue */
 }
 
-#navigation .logo path[fill*="#00856F"], /*vai o navigation, em logo, no path que tenha um fill (coloca o *=) que contenha o valor especificado*/
+#navigation .logo path[fill*="#00856F"], /*vai no navigation, em logo, no path que tenha um fill (coloca o *=) que contenha o valor especificado*/
 #backToTopButton circle {
     fill: var(--primary-color);
 }
@@ -222,7 +222,7 @@ body.menu-expanded .close-menu {
     transform: translateY(100%);   /* Vai jogar o elemento para baixo no eixo vertical y, basicamente pegar o menu e jogar ele para fora da tela*/
 }
 
-body.menu-expanded .menu {   /* reparei que cuando os seletores estao assim: select.another em vez de select .another (quando estao sem espaco), é porque se usará JS com eles*/
+body.menu-expanded .menu {   /* reparei que quando os seletores estao assim: select.another em vez de select .another (quando estao sem espaco), é porque se usará JS com eles, ou seja, eles seao adicionados com JavaScript*/
     top: 0;
     left: 0;
     background: var(--primary-color);
@@ -517,7 +517,7 @@ footer .social-links {
     nav#navigation .wrapper * {
         margin: 0;
         padding: 0;
-        visibility: initial; /*initial - significa que eu oegarei o valor inicial antes de colocar css*/
+        visibility: initial; /*initial - significa que eu pegarei o valor inicial antes de colocar css*/
         display: initial;
         opacity: initial;
         flex-direction: initial;
@@ -674,14 +674,14 @@ footer .social-links {
         gap: 0;
     }
 
-    /* leitura dos selecores: pegar  no home, o stats, e dentro do stats, ver qual(quais) stat tem um stat anterior a ele */
+    /* leitura dos selecores: pegar  no home, o stats, e dentro do stat, ver qual(quais) stat tem um stat anterior a ele */
     /*isso aqui será as linhas verdes verticais entre cada stat*/
     #home .stats .stat + .stat {
         border-left: 1px solid var(--primary-color);
     }
 
     #home .stats .stat {
-        flex: 1; /*para deixar as casixas iguais, caad um dos filhos do flex recebe este valor e preenche igual, deixando-os iguais */
+        flex: 1; /*para deixar as casixas iguais, cada um dos filhos do flex recebe este valor e preenche igual, deixando-os iguais */
     }
 
     #home .button {
