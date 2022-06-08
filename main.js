@@ -61,7 +61,7 @@ function activateMenuAtCurrentSection(section) {
     }
 }
 
-
+const navigation = document.getElementById('navigation');
 
 
 function showNavOnScroll() {
