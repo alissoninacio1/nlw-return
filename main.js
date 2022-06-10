@@ -61,10 +61,12 @@ function activateMenuAtCurrentSection(section) {
     }
 }
 
-const navigation = document.getElementById('navigation');
+
 
 
 function showNavOnScroll() {
+    const navigation = document.getElementById('navigation');
+    
     if(scrollY > 0) {
         navigation.classList.add('scroll')
     } else {
