@@ -4,6 +4,8 @@ It was an intensive development week.
 
 
 Visit the website here: https://alissoninacio1.github.io/nlw-return-doctor-care/
+
+#video section go here
      
 Sites used:
 https://scrollrevealjs.org/
